@@ -1,0 +1,240 @@
+let str = "";
+let boolean = true;
+console.log(str + boolean);//returns false
+
+let str1 = "bla";
+let boolean1 = true;
+console.log(str1+boolean1); // returns blatrue
+
+let str2 = "bla";
+let boolean2 = false;
+console.log(str2+boolean2); // returns blafalse
+
+
+let string = "bla";
+let number = 25;
+console.log(string+number); // returns bla25
+
+let string1 = "";
+let number1 = 25;
+console.log(string1+number1); // returns "25"
+
+let num = 25;
+let bool = true;
+console.log(num+bool); // returns 26
+
+let num1 = 25;
+let bool1 = false;
+console.log(num1 +bool1); // returns 25
+
+let num2 = 0;
+let bool2 = false;
+console.log(num2 +bool2); // returns 0
+
+let num3 = 0;
+let bool3 = true;
+console.log(num3 +bool3); // returns 1
+
+//string * boolean, string * number, number * boolean
+
+let stri = "bla";
+let boo = true;
+console.log(stri*boo); //returns NaN
+
+let stri1 = "bla";
+let boo1 = false;
+console.log(stri1*boo1); //returns NaN
+
+let str3 = "bla";
+let numb = 25;
+console.log(str3*numb); //returns NaN
+
+let str4 = "bla";
+let numb1 = 0;
+console.log(str4*numb1); //returns NaN
+
+let numbe = 25;
+let bo = false;
+console.log(numbe*bo); //returns 0
+
+let numbe1 = 25;
+let bo1 = true;
+console.log(numbe1*bo1); //returns 25
+
+//string/boolean, string/number, number/Boolean
+
+console.log("bla" / true); //returns NaN
+console.log("bla" / false);//returns NaN
+
+console.log("12"/ 6);//returns 2
+console.log("bla" / 6);//returns NaN
+
+console.log(12 / true);//returns 12
+console.log(12 / false);//returns Infinity
+
+
+let age = Number("Anything");
+console.log(age); // NaN
+
+let changeString = Number("15");
+console.log(changeString); // 15
+
+let changeBoolean = Number(0);
+console.log(changeBoolean) //0
+
+let changeBoolean1 = Number("1");
+console.log(changeBoolean1) // 
+
+
+let car = {
+  color: "black"
+};
+car.color = "green";
+car.power = function() {
+  console.log(power = 220);
+}
+car.power();
+
+function sum(apple, pear){
+ return apple + pear;
+}
+let result = sum(15, 26);
+console.log(result);
+
+let name = "Marine";
+function checkName() {
+ if(name == "Marine"){
+  return ("Hallo" + name);
+ }
+ return ("No such name");
+}
+
+function isPrime(num) {
+  for(var i = 2; i < num; i++)
+    if(num % i === 0) return false;
+  return num > 1;
+}
+
+
+let films = ["Bright Star", "The Dark Knight", "Fahrenheit 9/11 "];
+for (let key in films) {
+  console.log( films[key] ); 
+}
+
+let carFirms = ["Volvo", "BMW", "Mersedes"];
+let newstr = carFirms.join(' ');
+console.log(newstr)
+let newstr1 = newstr.split(" ");
+console.log(newstr1);
+
+let names = ['John', 'Max', 'Ellie'];
+let namesWithGreeting = (arr) => {
+    return arr.map(name => "Hello " + name);
+}
+console.log(namesWithGreeting(names));
+
+let arrSort = [1,6,7,8,3,4,5,6];
+arrSort.sort((a, b) => b - a);
+console.log(arrSort);
+
+let filterarr = [1,6,7,8,3,4,5,6];
+
+const res = filterarr.filter(num => num > 3);
+
+console.log(res);
+
+//Написать функцию, которая принимает два параметра - массив и число и выводит индекс элемента массива равный числу
+
+function getIndex(arr, num) {
+
+  let arrnum = [];
+
+  for(let i = 0; i < arr.length; i++) {
+
+    if(arr[i] == num){
+    return arr.index;
+    }
+  }
+
+  return arrnum;
+}
+
+console.log(getIndex([3, 5, 7, 8, 5], 8)); 
+
+
+//Реализовать цикл, который будет выводить число а, пока оно не станет меньше 10
+
+for(let a = 0; a < 10; a++) {
+console.log(a);
+}
+
+//Реализовать цикл, который выводит в консоль простые числа
+
+let n = 10;
+nextPrime:
+for (let i = 2; i <= n; i++) { 
+  for (let j = 2; j < i; j++) {
+   if (i % j == 0) continue nextPrime;
+ }
+   console.log( i ); 
+}
+
+//Реализовать цикл, который выводит в консоль нечетные числа
+let nu = 0;
+while(nu < 10){
+  nu++;
+  if(nu % 2) console.log(nu);
+}
+
+
+//Создать 2 объекта: animal и cat, объект animal добавить свойство move, объект cat должен наследовать свойство move
+
+
+class Animal {
+
+  constructor(move) {
+    this.move = move;
+  }
+
+}
+
+class Cat extends Animal {
+  constructor(move) {
+    super(move);
+    this.created = Date.now();
+  }
+}
+
+let cat = new Cat("Move forward"); 
+console.log(cat.move); 
+
+//Дана строка 'ahb acb aeb aeeb adcb axeb'. Напишите регулярное выражение, которое найдет строки ahb, acb, aeb по шаблону: буква 'a', любой символ, буква 'b'
+
+let regstr = 'ahb acb aeb aeeb adcb axeb';
+console.log(regstr.match(/a.b/gi));
+
+
+//Дана строка '2+3 223 2223'. Напишите регулярку, которая найдет строку 2+3, не захватив остальные
+
+let regs = '2+3 223 2223';
+console.log(regs.match(/2\+3/));
+
+//Получить день, месяц и год текущей даты и по отдельности вывести в консоль
+
+let now = new Date();
+
+console.log(now.getDate());
+console.log(now.getMonth() + 1);
+console.log(now.getFullYear());
+
+//В try catch конструкцию завернуть код: console.log(a), let a = 3. И вывести ошибку – ‘let перед использованием нужно объявить’. При выполнении 1/0  выводить ошибку 'на ноль делить нельзя'
+let a = 3;
+try {
+    if(1 / 0){
+    throw ('на ноль делить нельзя');
+    }
+} catch (err) {
+		console.log(a);
+		console.log("let перед использованием нужно объявить");
+    console.log(err);
+}
